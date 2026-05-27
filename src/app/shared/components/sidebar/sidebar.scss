@@ -1,0 +1,9 @@
+@use '../../../abstracts/variables' as variables;
+
+:host { //host target component root element
+  display: block;
+  width: 220px;
+  height: 100%;
+  background: variables.$sidebar-color;
+  color: white;
+}
