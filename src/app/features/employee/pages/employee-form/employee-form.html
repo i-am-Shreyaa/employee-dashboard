@@ -1,1 +1,45 @@
-<p>employee-form works!</p>
+<h2>
+    Add Employee
+</h2>
+
+<!-- employee form -->
+
+<form [formGroup]="employeeForm" (ngSubmit)="onFOrmSubmit()">
+
+
+    <input type="text" placeholder="Name" formControlName="empName">
+    @if(employeeForm.get('empName')?.touched &&
+        employeeForm.get('empName')?.hasError('required'))
+    {<p>Employee Name is mandatory field*</p>}
+    <br><br>
+
+    <input type="email" placeholder="Email" formControlName="empEmail">
+
+    <br><br>
+
+    <input type="text" placeholder="Phone" formControlName="empPhone">
+
+    <br><br>
+
+    <button type="button" (click)="addSkill()">
+
+        Add Skill
+
+    </button>
+
+    <br><br>
+
+    <div formArrayName="skills">
+        @for (empSkill of skills.controls; track $index) {
+        <div>
+        
+            <input [formControlName]="$index">
+        
+            <button type="button" (click)="removeSkill($index)"> Remove </button>
+        </div>
+        }
+
+    </div>
+            <button type="button" (click)="onFOrmSubmit()"> Submit </button>
+
+</form>

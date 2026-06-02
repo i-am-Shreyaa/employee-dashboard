@@ -16,6 +16,11 @@ export const routes: Routes = [
     path: 'employees',
     loadComponent: () => 
       import('./features/employee/pages/employee-list/employee-list').then(m => m.EmployeeList)
+  },
+  {
+    path: 'employee-form',
+    loadComponent: () => 
+      import('./features/employee/pages/employee-form/employee-form').then(m => m.EmployeeForm)
   }
 ];
 
