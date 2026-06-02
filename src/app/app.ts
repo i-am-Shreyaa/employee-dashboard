@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-import { Navbar}
-from './layouts/navbar/navbar';
-
-import { SidebarComponent }
-from './layouts/sidebar/sidebar';
+import { Navbar } from './layouts/navbar/navbar';
+import { Sidebar } from './layouts/sidebar/sidebar';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +9,13 @@ from './layouts/sidebar/sidebar';
   imports: [
     RouterOutlet,
     Navbar,
-    SidebarComponent
+    Sidebar
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class AppComponent {
   title='ANgular App'
+
+ 
 }
