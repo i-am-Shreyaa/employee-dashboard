@@ -1,1 +1,24 @@
-<p>employee-list works!</p>
+<h2>Employees</h2>
+
+@for(
+ employee of employees;
+ track employee.empEmail
+){
+
+  <div>
+
+    <h3>
+      {{ employee.empName }}
+    </h3>
+
+    <p>
+      {{ employee.empEmail }}
+    </p>
+
+    <p>
+      {{ employee.empPhone }}
+    </p>
+
+  </div>
+
+}

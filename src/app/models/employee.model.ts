@@ -1,11 +1,11 @@
 export interface Employee {
 
-  id: number;
+  empName: string;
 
-  name: string;
+  empEmail: string;
 
-  department: string;
+  empPhone: string;
 
-  email: string;
+  skills: string[];
 
 }
