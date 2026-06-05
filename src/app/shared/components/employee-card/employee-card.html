@@ -1,1 +1,18 @@
-<p>employee-card works!</p>
+
+<div>
+
+    <pre>{{ employee | json }}</pre>
+    <h3>
+      {{ employee?.empName }}
+    </h3>
+
+    <p>
+      {{ employee?.empEmail }}
+    </p>
+
+    <p>
+      {{ employee?.empPhone }}
+    </p>
+
+        <button (click)="onDelete()">Delete Employee</button>
+  </div>

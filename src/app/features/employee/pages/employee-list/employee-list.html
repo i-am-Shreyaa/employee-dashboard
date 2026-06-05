@@ -6,19 +6,10 @@
 ){
 
   <div>
+    <app-employee-card [employee]="employee"
+    (deleteClicked)="deleteEmployee($event)">
 
-    <h3>
-      {{ employee.empName }}
-    </h3>
-
-    <p>
-      {{ employee.empEmail }}
-    </p>
-
-    <p>
-      {{ employee.empPhone }}
-    </p>
-
+    </app-employee-card>
   </div>
 
 }

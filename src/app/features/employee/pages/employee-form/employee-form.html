@@ -4,7 +4,7 @@
 
 <!-- employee form -->
 
-<form [formGroup]="employeeForm" (ngSubmit)="onFOrmSubmit()">
+<form [formGroup]="employeeForm" (ngSubmit)="onFormSubmit()">
 
 
     <input type="text" placeholder="Name" formControlName="empName">
@@ -40,6 +40,6 @@
         }
 
     </div>
-            <button type="button" (click)="onFOrmSubmit()"> Submit </button>
+            <button type="button" (click)="onFormSubmit()"> Submit </button>
 
 </form>

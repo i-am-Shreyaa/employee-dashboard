@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, ReactiveFormsModule, Validators } from '@angula
 import { inject } from '@angular/core';
 import { EmployeeService } from '../../../../services/employee.service';
 import { Employee } from '../../../../models/employee.model';
+import { Router } from '@angular/router';
 
   @Component({
     selector: 'app-employee-form',
@@ -14,6 +15,7 @@ import { Employee } from '../../../../models/employee.model';
   export class EmployeeForm {
     private fb = inject(FormBuilder); //FOrmBuilder is used to group form controls together
     private empService = inject(EmployeeService); 
+    private router = inject(Router)
     //create reactive form
 
     employeeForm = this.fb.group({
@@ -36,7 +38,7 @@ import { Employee } from '../../../../models/employee.model';
       this.skills.removeAt(index)
     }
 
-    onFOrmSubmit(){
+    onFormSubmit(){
       console.log('FOrm Submit')
       if(this.employeeForm.invalid){
         // console.log('Invalid form');
@@ -51,11 +53,13 @@ import { Employee } from '../../../../models/employee.model';
         return
       }
       if(this.employeeForm.valid){
-        console.log(this.employeeForm.value)
-      }
-      this.empService.addEmployee(
+        this.empService.addEmployee(
         this.employeeForm.value as Employee
       )
+      console.log('Added employee from form');
+      this.router.navigate(['/employees'])
+      }
+      
       //reset after save
       this.employeeForm.reset();
     }

@@ -21,6 +21,12 @@ export const routes: Routes = [
     path: 'employee-form',
     loadComponent: () => 
       import('./features/employee/pages/employee-form/employee-form').then(m => m.EmployeeForm)
-  }
+  },
+  {
+    path: 'employee-card',
+    loadComponent: () => 
+      import('./shared/components/employee-card/employee-card').then(m => m.EmployeeCard)
+  },
+  
 ];
 
